@@ -1,13 +1,22 @@
 // JavaScript untuk logika kalkulator
 function appendDisplay(value) {
-    document.getElementById("display").value += value;
+    const display = document.getElementById("display");
+    
+    // Mengatur +/- untuk mengubah tanda angka
+    if (value === '±') {
+        display.value = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
+        return;
+    }
+    
+    // Menambahkan nilai ke display
+    display.value += value;
 }
 
 function clearDisplay() {
     document.getElementById("display").value = "";
 }
 
-// Modifikasi fungsi calculateResult agar hasilnya selalu "hi pretty girl"
+// Mengatur agar hasil selalu menampilkan "miss you my sweety girl"
 function calculateResult() {
-    document.getElementById("display").value = "i miss you, my sweetie girl";
+    document.getElementById("display").value = "miss you my sweety girl";
 }
