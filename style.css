@@ -1,110 +1,137 @@
-/* Tampilan kalkulator mirip iPhone */
-body {
+/* Mengatur tampilan body */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 1s ease-in-out;
+}
+
+/* Kontainer hati agar selalu ditengah */
+.heart-container {
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    background-color: #000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.calculator {
-    width: 320px;
-    padding: 20px;
-    background-color: #000;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+/* Tampilan hati besar */
+.heart {
+    width: 50vmin;
+    height: 50vmin;
+    background: red;
+    position: relative;
+    transform: scale(1) rotate(45deg);
+    animation: shrinkAndFade 3s forwards;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.display {
-    width: 100%;
-    height: 100px;
-    text-align: right;
-    padding: 20px;
-    font-size: 48px;
-    border: none;
-    border-radius: 10px;
-    background-color: #000;
-    color: #fff;
-    margin-bottom: 20px;
-    outline: none;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.button {
-    padding: 20px;
-    font-size: 24px;
-    border: none;
+.heart::before,
+.heart::after {
+    content: "";
+    width: 50vmin;
+    height: 50vmin;
+    background: red;
     border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    position: absolute;
 }
 
-/* Tombol angka berwarna abu-abu gelap */
-.button.number {
-    background-color: #333333;
-    color: white;
+.heart::before {
+    top: -25vmin;
+    left: 0;
 }
 
-.button.number.zero {
-    grid-column: span 2; /* Tombol 0 memanjang */
-    border-radius: 50px;
+.heart::after {
+    left: -25vmin;
+    top: 0;
 }
 
-.button.number:hover {
-    background-color: #4d4d4d;
+@keyframes shrinkAndFade {
+    0% {
+        transform: scale(2) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
 }
 
-/* Tombol operator berwarna oranye */
-.button.operator {
-    background-color: #ff9500;
-    color: white;
+/* Kontainer untuk teks pesan */
+.message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.button.operator:hover {
-    background-color: #cc7a00;
+.message {
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    border-right: 2px solid rgb(0, 0, 0);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-/* Tombol AC berwarna abu-abu terang */
-.button.clear {
-    background-color: #a5a5a5;
-    color: black;
-}
-
-.button.clear:hover {
-    background-color: #b8b8b8;
-}
-
-/* Tombol hasil "=" lebih besar dan oranye */
-.button.equals {
-    background-color: #ff9500;
-    color: white;
-    border-radius: 50%;
-}
-
-.button.equals:hover {
-    background-color: #cc7a00;
-}
-
-.display {
+/* Animasi untuk partikel hati kecil */
+.particles-container {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100px;
-    text-align: right;
-    padding: 20px;
-    font-size: 24px; /* Sesuaikan ukuran font agar teks panjang dapat terlihat */
-    border: none;
-    border-radius: 10px;
-    background-color: #000;
-    color: #fff;
-    margin-bottom: 20px;
-    outline: none;
-    white-space: nowrap; /* Menghindari teks dari terpotong ke baris berikutnya */
-    overflow: hidden; /* Sembunyikan teks yang melebihi lebar layar */
-    text-overflow: ellipsis; /* Tambahkan elipsis (...) jika teks terlalu panjang */
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 50%;
+}
+
+.particle-heart {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    opacity: 0.8;
+    animation: floatUp 5s ease-in-out infinite;
+}
+
+.particle-heart::before,
+.particle-heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.particle-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.particle-heart::after {
+    left: -10px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(50vw - 25px), -100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
