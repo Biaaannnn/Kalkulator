@@ -91,3 +91,20 @@ body {
 .button.equals:hover {
     background-color: #cc7a00;
 }
+
+.display {
+    width: 100%;
+    height: 100px;
+    text-align: right;
+    padding: 20px;
+    font-size: 24px; /* Sesuaikan ukuran font agar teks panjang dapat terlihat */
+    border: none;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 20px;
+    outline: none;
+    white-space: nowrap; /* Menghindari teks dari terpotong ke baris berikutnya */
+    overflow: hidden; /* Sembunyikan teks yang melebihi lebar layar */
+    text-overflow: ellipsis; /* Tambahkan elipsis (...) jika teks terlalu panjang */
+}
