@@ -5,38 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="calculator">
-    <input type="text" id="display" class="display" disabled>
-    <div class="buttons">
-        <button class="button clear" onclick="clearDisplay()">AC</button>
-        <button class="button operator" onclick="appendDisplay('±')">±</button>
-        <button class="button operator" onclick="appendDisplay('%')">%</button>
-        <button class="button operator" onclick="appendDisplay('/')">÷</button>
-        
-        <button class="button number" onclick="appendDisplay('7')">7</button>
-        <button class="button number" onclick="appendDisplay('8')">8</button>
-        <button class="button number" onclick="appendDisplay('9')">9</button>
-        <button class="button operator" onclick="appendDisplay('*')">×</button>
-
-        <button class="button number" onclick="appendDisplay('4')">4</button>
-        <button class="button number" onclick="appendDisplay('5')">5</button>
-        <button class="button number" onclick="appendDisplay('6')">6</button>
-        <button class="button operator" onclick="appendDisplay('-')">-</button>
-
-        <button class="button number" onclick="appendDisplay('1')">1</button>
-        <button class="button number" onclick="appendDisplay('2')">2</button>
-        <button class="button number" onclick="appendDisplay('3')">3</button>
-        <button class="button operator" onclick="appendDisplay('+')">+</button>
-
-        <button class="button number zero" onclick="appendDisplay('0')">0</button>
-        <button class="button number" onclick="appendDisplay('.')">.</button>
-        <button class="button equals" onclick="calculateResult()">=</button>
+    <div class="heart-container">
+        <div class="heart"></div>
     </div>
-</div>
-
-<script src="script.js"></script>
+    <div class="message-container">
+        <p class="message" id="typing-message"></p>
+    </div>
+    <div class="particles-container"></div>
+    <script src="script.js"></script>
 </body>
 </html>
