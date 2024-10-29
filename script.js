@@ -9,5 +9,5 @@ function clearDisplay() {
 
 // Modifikasi fungsi calculateResult agar hasilnya selalu "hi pretty girl"
 function calculateResult() {
-    document.getElementById("display").value = "hi pretty girl";
+    document.getElementById("display").value = "i miss you, my sweetie girl";
 }
