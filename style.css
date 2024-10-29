@@ -75,7 +75,7 @@ body, html {
 }
 
 .message {
-    font-size: 1rem;
+    font-size: 0.875em;
     color: rgb(0, 0, 0);
     font-weight: 700;
     border-right: 2px solid rgb(0, 0, 0);
